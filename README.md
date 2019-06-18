@@ -5,7 +5,7 @@ Monday, June 17th 2019
 Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+The project consists in a python script that uses Pandas and Numpy to analize data of bikeshare of three different cities in US, displaying useful information based on user input to create month and/or day filters and select the city.
 
 ### Files used
 Include the files used
