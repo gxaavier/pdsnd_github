@@ -1,15 +1,15 @@
 ### Date created
-Include the date you created this project and README file.
+Monday, June 17th 2019
 
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+The project consists in a python script that uses Pandas and Numpy to analize data of bikeshare of three different cities in US, displaying useful information based on user input to create month and/or day filters and select the city.
 
 ### Files used
-Include the files used
+bikeshare_2.py, chicago.csv, washington.csv, new_york_city.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Pandas documentation availabe at:
+https://pandas.pydata.org/pandas-docs/stable/

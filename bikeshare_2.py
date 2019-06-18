@@ -188,12 +188,12 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # display total travel time
-    # Changing times to TimeDeltas
+    # Changing times to TimeDeltas - only saw this was not necessary when was done
     # df['Start Time'] = pd.to_timedelta(df['Start Time'])
     # df['End Time'] = pd.to_datetime(df['End Time'])
     # df['End Time'] = pd.to_timedelta(df['End Time'])
-    # Creating trip duration
-    # df['Trip Duration'] = df['End Time'] - df['Start Time']
+    # Creating trip duration - only saw that already existed when was done
+    # df['Trip Duration'] = df['End Time'] - df['Start Time'] - used default Trip Duration
     total_trip_dur = round(((df['Trip Duration'].sum())/3600)/24, 2)
     print('The total trip duration was: {} days'.format(total_trip_dur))
 
