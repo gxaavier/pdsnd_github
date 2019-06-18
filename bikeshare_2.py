@@ -82,9 +82,19 @@ def get_filters():
         else:
             print('Sorry, your input must be a day between Sunday and Monday or "all" to not filter by any day.')
 
+<<<<<<< HEAD
     print('-'*40)
 
 
+||||||| merged common ancestors
+    print('-'*40)
+    
+    
+=======
+    print('-'*60)
+
+
+>>>>>>> refactoring
     return city, month, day
 
 
@@ -150,7 +160,7 @@ def time_stats(df):
     print('The most common hour is: {}'.format(popular_hour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 # In[37]:
@@ -175,7 +185,7 @@ def station_stats(df):
     print('The most frequent trip is: {}'.format(popular_trip))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 # In[38]:
@@ -187,6 +197,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
+<<<<<<< HEAD
     # display total travel time
     # Changing times to TimeDeltas - only saw this was not necessary when was done
     # df['Start Time'] = pd.to_timedelta(df['Start Time'])
@@ -194,6 +205,16 @@ def trip_duration_stats(df):
     # df['End Time'] = pd.to_timedelta(df['End Time'])
     # Creating trip duration - only saw that already existed when was done
     # df['Trip Duration'] = df['End Time'] - df['Start Time'] - used default Trip Duration
+||||||| merged common ancestors
+    # display total travel time
+    # Changing times to TimeDeltas
+    # df['Start Time'] = pd.to_timedelta(df['Start Time'])
+    # df['End Time'] = pd.to_datetime(df['End Time'])
+    # df['End Time'] = pd.to_timedelta(df['End Time'])
+    # Creating trip duration
+    # df['Trip Duration'] = df['End Time'] - df['Start Time']
+=======
+>>>>>>> refactoring
     total_trip_dur = round(((df['Trip Duration'].sum())/3600)/24, 2)
     print('The total trip duration was: {} days'.format(total_trip_dur))
 
@@ -202,7 +223,7 @@ def trip_duration_stats(df):
     print('The mean trip duration was: {} minutes'.format(mean_trip_dur))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 # In[39]:
@@ -248,7 +269,7 @@ def user_stats(df):
     else:
         print('Birth Year information is not present in data.\n')
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 # In[40]:
