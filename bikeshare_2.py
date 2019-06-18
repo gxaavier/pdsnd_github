@@ -83,8 +83,8 @@ def get_filters():
             print('Sorry, your input must be a day between Sunday and Monday or "all" to not filter by any day.')
 
     print('-'*40)
-    
-    
+
+
     return city, month, day
 
 
@@ -111,7 +111,7 @@ def load_data(city, month, day):
         df = pd.read_csv('washington.csv')
     # Changing datatype to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    # Creating two new columns to show month and day from Start Time column    
+    # Creating two new columns to show month and day from Start Time column
     df['Month'] = df['Start Time'].dt.month_name()
     df['Day'] = df['Start Time'].dt.weekday_name
     # Filtering by month and day that are already known by user input
@@ -123,8 +123,8 @@ def load_data(city, month, day):
         df = df[df['Month'] == month.title()]
     elif month == 'all' and day == 'all':
         df = df
-    
-    
+
+
     return df
 
 
@@ -188,7 +188,7 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # display total travel time
-    # Changing times to TimeDeltas
+    # Changing times to TimeDeltas - only saw this was not necessary when was done
     # df['Start Time'] = pd.to_timedelta(df['Start Time'])
     # df['End Time'] = pd.to_datetime(df['End Time'])
     # df['End Time'] = pd.to_timedelta(df['End Time'])
@@ -227,7 +227,7 @@ def user_stats(df):
          print('''The User Types counts are:\n
              Subscriber: {}\n
              Customer: {}\n'''.format(sub, cust))
-    
+
     # Display counts of gender
     if 'Gender' in df.columns:
         male = df.groupby('Gender').count()['Day']['Male']
@@ -236,8 +236,8 @@ def user_stats(df):
                  Male: {}\n
                  Female: {}\n'''.format(male, female))
     else:
-        print('Gender information is not present in data.\n')   
-              
+        print('Gender information is not present in data.\n')
+
     # Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df.columns:
         earliest = int(df['Birth Year'].sort_values().max())
@@ -271,4 +271,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
