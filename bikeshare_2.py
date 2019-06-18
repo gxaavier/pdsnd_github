@@ -82,9 +82,9 @@ def get_filters():
         else:
             print('Sorry, your input must be a day between Sunday and Monday or "all" to not filter by any day.')
 
-    print('-'*40)
-    
-    
+    print('-'*60)
+
+
     return city, month, day
 
 
@@ -111,7 +111,7 @@ def load_data(city, month, day):
         df = pd.read_csv('washington.csv')
     # Changing datatype to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    # Creating two new columns to show month and day from Start Time column    
+    # Creating two new columns to show month and day from Start Time column
     df['Month'] = df['Start Time'].dt.month_name()
     df['Day'] = df['Start Time'].dt.weekday_name
     # Filtering by month and day that are already known by user input
@@ -123,8 +123,8 @@ def load_data(city, month, day):
         df = df[df['Month'] == month.title()]
     elif month == 'all' and day == 'all':
         df = df
-    
-    
+
+
     return df
 
 
@@ -150,7 +150,7 @@ def time_stats(df):
     print('The most common hour is: {}'.format(popular_hour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 # In[37]:
@@ -175,7 +175,7 @@ def station_stats(df):
     print('The most frequent trip is: {}'.format(popular_trip))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 # In[38]:
@@ -202,7 +202,7 @@ def trip_duration_stats(df):
     print('The mean trip duration was: {} minutes'.format(mean_trip_dur))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 # In[39]:
@@ -227,7 +227,7 @@ def user_stats(df):
          print('''The User Types counts are:\n
              Subscriber: {}\n
              Customer: {}\n'''.format(sub, cust))
-    
+
     # Display counts of gender
     if 'Gender' in df.columns:
         male = df.groupby('Gender').count()['Day']['Male']
@@ -236,8 +236,8 @@ def user_stats(df):
                  Male: {}\n
                  Female: {}\n'''.format(male, female))
     else:
-        print('Gender information is not present in data.\n')   
-              
+        print('Gender information is not present in data.\n')
+
     # Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df.columns:
         earliest = int(df['Birth Year'].sort_values().max())
@@ -248,7 +248,7 @@ def user_stats(df):
     else:
         print('Birth Year information is not present in data.\n')
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 # In[40]:
@@ -271,4 +271,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
